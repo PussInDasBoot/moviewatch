@@ -1,8 +1,13 @@
 import React from "react";
 
+import { Movie } from "../../../../screens/Movies"
 import { WatchCard, CardInfo } from "./styles";
 
-const WatchListItem = ({ movie }) => {
+export interface IWatchListItemProps {
+  movie: Movie;
+}
+
+const WatchListItem: React.FC<IWatchListItemProps> = ({ movie }) => {
   return (
     <WatchCard>
       <img src={movie.thumbnail} />

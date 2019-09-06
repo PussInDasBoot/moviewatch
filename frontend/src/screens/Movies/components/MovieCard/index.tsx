@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Movie } from "../../index"
 import {
   MovieCardStyled,
   MoviePosterWrapper,
@@ -10,7 +11,12 @@ import {
   Rating
 } from "./styles";
 
-const MovieCard = ({ movie, onMovieClick }) => {
+interface IMovieCardProps {
+  movie: Movie;
+  onMovieClick(movie: Movie): void;
+}
+
+const MovieCard: React.FC<IMovieCardProps> = ({ movie, onMovieClick }) => {
   return (
     <MovieCardStyled>
       <MoviePosterWrapper>
